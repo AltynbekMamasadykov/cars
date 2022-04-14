@@ -454,3 +454,13 @@ SELECT * FROM cars WHERE brand NOT LIKE 'Toyota';
 SELECT * FROM cars ORDER BY price DESC LIMIT 10;
 
 
+-- #16 Display the newest cars between 5th to 15th
+SELECT * FROM cars ORDER BY year_of_issue DESC OFFSET 5 ROWS  FETCH NEXT 10 ROWS ONLY ;
+
+-- #17 Display cars where car's year of issue not between 1995 and 2005;
+SELECT * FROM cars WHERE year_of_issue<1995 OR year_of_issue>2005;
+
+-- #18 Display most cars in one color
+SELECT color,COUNT(*) AS mostColorCount FROM cars GROUP BY color ORDER BY COUNT(*) DESC LIMIT 1;
+
+
